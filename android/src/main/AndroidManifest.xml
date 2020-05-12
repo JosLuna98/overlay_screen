@@ -1,3 +1,3 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.loading_screen">
+  package="dev.jostech.loading_screen">
 </manifest>

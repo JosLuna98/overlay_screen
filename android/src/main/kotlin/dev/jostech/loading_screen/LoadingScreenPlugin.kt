@@ -1,4 +1,4 @@
-package com.example.loading_screen
+package dev.jostech.loading_screen
 
 import androidx.annotation.NonNull;
 

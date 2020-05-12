@@ -2,14 +2,14 @@
 
 A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
 
->**NOTE:** This package was made with Flutter 1.17 and Dart 2.8, make sure you have your environment within the version range.
->```yaml
->environment:
->  sdk: ">=2.7.0 <3.0.0"
->  flutter: ">=1.10.0"
->```
-
 ![](https://raw.githubusercontent.com/JosLuna98/loading_screen/master/screenshots/untitled.gif)
+
+**NOTE:** This package was made with Flutter 1.17 and Dart 2.8, make sure you have your environment within the version range.
+```yaml
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.10.0"
+```
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ To use this plugin, add `loading_screen` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  loading_screen: ^1.0.0
+  loading_screen: ^1.0.1
 ```
 
 ## Usage
@@ -27,14 +27,14 @@ Import the package:
 import 'package:loading_screen/loading_screen.dart';
 ```
 
->**NOTE:** It's not necessary to set a variable of the class like:
->```dart
->LoadingScreen loading = LoadingScreen();
->```
->You can just call the `LoadingScreen()` class and use it's methods like:
->```dart
->LoadingScreen().begin(context);
->```
+**NOTE:** It's not necessary to set a variable of the class like:
+```dart
+LoadingScreen loading = LoadingScreen();
+```
+You can just call the `LoadingScreen()` class and use its methods like:
+```dart
+LoadingScreen().begin(context);
+```
 
 ### Functions
 
@@ -88,6 +88,14 @@ This method dispose the loading screen.
 
 ```dart
 LoadingScreen().end();
+```
+
+* **state**
+
+LoadScreen also has the `state` getter to know if something is loading when it is `Load.processing` or nothing is loading when it is `Load.closed`.
+
+```dart
+LoadingScreen().state;
 ```
 
 ##  License

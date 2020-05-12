@@ -1,6 +1,6 @@
 name: loading_screen
 description: A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/JosLuna98/loading_screen.git
 
 environment:
@@ -19,7 +19,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.loading_screen
+        package: dev.jostech.loading_screen
         pluginClass: LoadingScreenPlugin
       ios:
         pluginClass: LoadingScreenPlugin

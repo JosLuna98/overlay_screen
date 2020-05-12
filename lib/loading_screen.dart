@@ -12,11 +12,11 @@ enum Load {
 /// Displays and dispose a [Dialog]
 /// that works like a loading screen.
 class LoadingScreen {
+  LoadingScreen._internal();
   static final LoadingScreen _instance = LoadingScreen._internal();
 
   /// Singleton constructor.
   factory LoadingScreen() => _instance;
-  LoadingScreen._internal();
 
   Load _state = Load.closed;
   BuildContext _dContext;
@@ -36,7 +36,7 @@ class LoadingScreen {
     BuildContext context, {
     @required String identifier,
   }) {
-    assert(_instance._customLoadingScreen != null,
+    assert(_instance._customLoadingScreen.isNotEmpty,
         "must first configure at least one custom widget");
     assert(_customLoadingScreen.containsKey(identifier), "widget not found");
     assert(_instance._state == Load.closed, "already loading");
