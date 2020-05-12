@@ -2,6 +2,13 @@
 
 A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
 
+>**NOTE:** This package was made with Flutter 1.17 and Dart 2.8, make sure you have your environment within the version range.
+>```yaml
+>environment:
+>  sdk: ">=2.7.0 <3.0.0"
+>  flutter: ">=1.10.0"
+>```
+
 ![](https://raw.githubusercontent.com/JosLuna98/loading_screen/master/screenshots/untitled.gif)
 
 ## Getting Started
