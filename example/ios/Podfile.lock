@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - loading_screen (1.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - loading_screen (from `.symlinks/plugins/loading_screen/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  loading_screen:
+    :path: ".symlinks/plugins/loading_screen/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  loading_screen: 7713deaa60dce31991cff88356c756ba5d96cabc
+
+PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+
+COCOAPODS: 1.9.1

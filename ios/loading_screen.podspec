@@ -4,14 +4,14 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'loading_screen'
-  s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.version          = '1.0.1'
+  s.summary          = 'A Flutter plugin to easily display loading screens.'
   s.description      = <<-DESC
-A new flutter plugin project.
+  A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/JosLuna98/loading_screen.git'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'JosTech.Dev' => 'josluna1098@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
