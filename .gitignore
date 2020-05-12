@@ -1,0 +1,9 @@
+.DS_Store
+.dart_tool/
+gen_doc.sh
+
+.packages
+.pub/
+doc
+
+build/
