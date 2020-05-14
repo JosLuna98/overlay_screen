@@ -1,4 +1,5 @@
 # Loading Screen
+# This plugin is discontinued, please see [Overlay Screen](https://pub.dev/packages/overlay_screen)
 
 A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
 
