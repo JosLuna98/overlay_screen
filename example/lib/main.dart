@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     OverlayScreen().saveScreens({
       'dialog': CustomOverlayScreen(
+        backgroundColor: Colors.transparent,
         content: Dialog(
           child: SizedBox(
             height: 180.0,
@@ -51,9 +52,29 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        backgroundColor: Colors.transparent,
+      ),
+      'custom1': CustomOverlayScreen(
+        backgroundColor: Colors.blue.withOpacity(0.5),
+        content: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.backup,
+              color: Colors.white,
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              "Uploading data...",
+              style: TextStyle(
+                color: Colors.white,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
       ),
       'custom2': CustomOverlayScreen(
+        backgroundColor: Colors.yellow[400],
         content: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -67,7 +88,6 @@ class MyApp extends StatelessWidget {
                 child: Text("Let's start!"))
           ],
         ),
-        backgroundColor: Colors.white,
       ),
     });
 
@@ -105,7 +125,20 @@ class MyApp extends StatelessWidget {
               },
             ),
             RaisedButton(
-              child: Text("custom2 loading"),
+              child: Text("custom1 overlay"),
+              onPressed: () async {
+                OverlayScreen().show(
+                  context,
+                  identifier: 'custom1',
+                );
+                await Future.delayed(
+                  Duration(seconds: 2),
+                  () => OverlayScreen().pop(),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text("custom2 overlay"),
               onPressed: () async {
                 OverlayScreen().show(
                   context,

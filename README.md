@@ -17,7 +17,7 @@ To use this plugin, add `overlay_screen` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  overlay_screen: ^1.2.0
+  overlay_screen: ^1.2.0+1
 ```
 
 ## Usage

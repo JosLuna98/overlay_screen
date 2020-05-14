@@ -82,11 +82,11 @@ class OverlayScreen {
 
 /// Custom widget to display in a [OverlayScreen].
 class CustomOverlayScreen extends StatelessWidget {
-  /// Custom content for [OverlayScreen].
-  final Widget content;
-
   /// Backgroundcolor for [OverlayScreen].
   final Color backgroundColor;
+
+  /// Custom content for [OverlayScreen].
+  final Widget content;
 
   /// CustomOverlayScreen constructor.
   CustomOverlayScreen({
