@@ -1,12 +1,3 @@
-## 1.0.1+1
+## 1.2.0
 
-* discontinued
-
-## 1.0.1
-
-* More documentation and examples.
-* Internal values fixed.
-
-## 1.0.0
-
-* Initial release.
+* Remake of the [LoadingScreen](https://pub.dev/packages/loading_screen) Plugin to get a better context

@@ -1,4 +1,4 @@
-package dev.jostech.loading_screen
+package dev.jostech.overlay_screen
 
 import androidx.annotation.NonNull;
 
@@ -9,8 +9,8 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
-/** LoadingScreenPlugin */
-public class LoadingScreenPlugin: FlutterPlugin, MethodCallHandler {
+/** OverlayScreenPlugin */
+public class OverlayScreenPlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -18,7 +18,7 @@ public class LoadingScreenPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "loading_screen")
+    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "overlay_screen")
     channel.setMethodCallHandler(this);
   }
 
@@ -34,8 +34,8 @@ public class LoadingScreenPlugin: FlutterPlugin, MethodCallHandler {
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "loading_screen")
-      channel.setMethodCallHandler(LoadingScreenPlugin())
+      val channel = MethodChannel(registrar.messenger(), "overlay_screen")
+      channel.setMethodCallHandler(OverlayScreenPlugin())
     }
   }
 

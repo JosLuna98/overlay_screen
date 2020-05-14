@@ -1,4 +1,4 @@
-group 'com.example.loading_screen'
+group 'dev.jostech.overlay_screen'
 version '1.0-SNAPSHOT'
 
 buildscript {

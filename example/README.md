@@ -1,6 +1,6 @@
-# loading_screen_example
+# overlay_screen_example
 
-Demonstrates how to use the loading_screen plugin.
+Demonstrates how to use the overlay_screen plugin.
 
 ## Getting Started
 

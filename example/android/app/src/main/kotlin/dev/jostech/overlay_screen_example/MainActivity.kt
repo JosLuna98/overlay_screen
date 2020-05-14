@@ -1,4 +1,4 @@
-package com.example.loading_screen_example
+package dev.jostech.overlay_screen_example
 
 import io.flutter.embedding.android.FlutterActivity
 

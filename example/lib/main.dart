@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:loading_screen/loading_screen.dart';
+import 'package:overlay_screen/overlay_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,27 +16,45 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    LoadingScreen().saveCustomWidgets({
-      'dialog': CustomLoadingScreen(
-        child: Dialog(
+    OverlayScreen().saveScreens({
+      'dialog': CustomOverlayScreen(
+        content: Dialog(
           child: SizedBox(
             height: 180.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                CircularProgressIndicator(),
-                Padding(
-                  padding: EdgeInsets.only(top: 20.0),
-                  child: Text('Loading...'),
-                )
+                Text(
+                  'No internet connection!!',
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  "waiting..",
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                SizedBox(
+                  height: 20.0,
+                  width: 20.0,
+                  child: CircularProgressIndicator(),
+                ),
               ],
             ),
           ),
         ),
         backgroundColor: Colors.transparent,
       ),
-      'custom2': CustomLoadingScreen(
-        child: Column(
+      'custom2': CustomOverlayScreen(
+        content: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
@@ -62,51 +80,41 @@ class MyApp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              child: Text("standard loading"),
+              child: Text("default loading"),
               onPressed: () async {
-                LoadingScreen().begin(context);
+                OverlayScreen().show(context);
                 await Future.delayed(
-                    Duration(seconds: 2), () => print("loading something"));
-                LoadingScreen().end();
-              },
-            ),
-            RaisedButton(
-              child: Text("personalized loading"),
-              onPressed: () async {
-                LoadingScreen().begin(
-                  context,
-                  child: Icon(
-                    Icons.backup,
-                    color: Colors.white,
-                  ),
-                  message: "Uploading data...",
-                  messageStyle: TextStyle(
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic,
-                  ),
-                  backgroundColor: Colors.blue.withOpacity(0.8),
+                  Duration(seconds: 2),
+                  () => print("loading something"),
                 );
-                await Future.delayed(
-                    Duration(seconds: 2), () => print("loading something"));
-                LoadingScreen().end();
+                OverlayScreen().pop();
               },
             ),
             RaisedButton(
               child: Text("dialog loading"),
               onPressed: () async {
-                LoadingScreen().beginCustom(context, identifier: 'dialog');
+                OverlayScreen().show(
+                  context,
+                  identifier: 'dialog',
+                );
                 await Future.delayed(
-                    Duration(seconds: 2), () => print("loading something"));
-                LoadingScreen().end();
+                  Duration(seconds: 2),
+                  () => print("loading something"),
+                );
+                OverlayScreen().pop();
               },
             ),
             RaisedButton(
               child: Text("custom2 loading"),
               onPressed: () async {
-                LoadingScreen().beginCustom(context, identifier: 'custom2');
+                OverlayScreen().show(
+                  context,
+                  identifier: 'custom2',
+                );
                 await Future.delayed(
-                    Duration(seconds: 2), () => print("loading something"));
-                LoadingScreen().end();
+                  Duration(seconds: 2),
+                  () => OverlayScreen().pop(),
+                );
               },
             ),
           ],

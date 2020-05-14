@@ -1,21 +1,21 @@
 PODS:
   - Flutter (1.0.0)
-  - loading_screen (1.0.1):
+  - overlay_screen (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - loading_screen (from `.symlinks/plugins/loading_screen/ios`)
+  - overlay_screen (from `.symlinks/plugins/overlay_screen/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  loading_screen:
-    :path: ".symlinks/plugins/loading_screen/ios"
+  overlay_screen:
+    :path: ".symlinks/plugins/overlay_screen/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  loading_screen: 7713deaa60dce31991cff88356c756ba5d96cabc
+  overlay_screen: 91c448b5e18235ff087d83797e0613fc4a81fca1
 
 PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
 

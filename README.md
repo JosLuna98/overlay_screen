@@ -1,9 +1,8 @@
-# Loading Screen
-# This plugin is discontinued, please see [Overlay Screen](https://pub.dev/packages/overlay_screen)
+# Overlay Screen
 
-A Flutter plugin to easily display and dispose standard or custom loading screens anywhere in your app.
+A Flutter plugin to easily display and dispose overlay screens anywhere in your app.
 
-![](https://raw.githubusercontent.com/JosLuna98/loading_screen/master/screenshots/untitled.gif)
+![](https://raw.githubusercontent.com/JosLuna98/overlay_screen/master/screenshots/untitled.gif)
 
 **NOTE:** This package was made with Flutter 1.17 and Dart 2.8, make sure you have your environment within the version range.
 ```yaml
@@ -14,89 +13,86 @@ environment:
 
 ## Getting Started
 
-To use this plugin, add `loading_screen` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/). For example:
+To use this plugin, add `overlay_screen` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/). For example:
 
 ```yaml
 dependencies:
-  loading_screen: ^1.0.1+1
+  overlay_screen: ^1.2.0
 ```
 
 ## Usage
 
 Import the package:
 ```dart
-import 'package:loading_screen/loading_screen.dart';
+import 'package:overlay_screen/overlay_screen.dart';
 ```
 
 **NOTE:** It's not necessary to set a variable of the class like:
 ```dart
-LoadingScreen loading = LoadingScreen();
+OverlayScreen loading = OverlayScreen();
 ```
-You can just call the `LoadingScreen()` class and use its methods like:
+You can just call the `OverlayScreen()` class and use its methods like:
 ```dart
-LoadingScreen().begin(context);
+OverlayScreen().show(context);
 ```
 
 ### Functions
 
-* **begin**
+* **saveScreens**
 
-This method displays a standard loading screen, just send the context parameter. The rest of the parameters are optional and personalize the screen a little.
-
-```dart
-LoadingScreen().begin(
-  BuildContext context,
-  child: Widget,
-  message: String,
-  messageStyle: TextStyle,
-  backgroundColor: Color,
-);
-```
-
-* **saveCustomWidgets**
-
-This method takes a `Map<String, CustomLoadingScreen()>`to save it and allows you to use it later with the beginCustom method.
+This method takes a `Map<String, CustomOverlayScreen>`to save it and allows you to use it later with the `show` method.
 
 ```dart
-LoadingScreen().saveCustomWidgets({
-  String: CustomLoadingScreen(
-    child: Widget, 
+OverlayScreen().saveScreens({
+  String: CustomOverlayScreen(
     backgroundColor: Color,
+    content: Widget, 
   ),
-  String: CustomLoadingScreen(
-    child: Widget, 
+  String: CustomOverlayScreen(
     backgroundColor: Color,
+    content: Widget, 
   ),
-  String: CustomLoadingScreen(
-    child: Widget, 
+  String: CustomOverlayScreen(
     backgroundColor: Color,
+    content: Widget, 
   ),
   ...
 });
 ```
 
-* **beginCustom**
+* **removeScreens**
 
-This method is like the begin method but will display a customLoadingScreen saved that is selected by identifier parameter.
+This method removes widgets to display by `show`.
 
 ```dart
-LoadingScreen().beginCustom(BuildContext context, identifier: String);
+OverlayScreen().removeScreens([String, String, String...]);
 ```
 
-* **end**
+* **show**
 
-This method dispose the loading screen.
+This method displays an `OverlayScreen` by an identifier.
 
 ```dart
-LoadingScreen().end();
+OverlayScreen().show(
+  BuildContext context,
+  identifier: String,
+);
+```
+
+* **pop**
+
+This method dispose an `OverlayScreen` displayed.
+
+```dart
+OverlayScreen().pop();
 ```
 
 * **state**
 
-LoadScreen also has the `state` getter to know if something is loading when it is `Load.processing` or nothing is loading when it is `Load.closed`.
+OverlayScreen also has the `state` getter to know if a overlay screen is displayed when it is `Screen.showing` or nothing is displayed when it is `Screen.none`.
 
 ```dart
-LoadingScreen().state;
+OverlayScreen().state;
 ```
 
 ##  License

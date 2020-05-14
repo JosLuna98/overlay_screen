@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftLoadingScreenPlugin: NSObject, FlutterPlugin {
+public class SwiftOverlayScreenPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "loading_screen", binaryMessenger: registrar.messenger())
-    let instance = SwiftLoadingScreenPlugin()
+    let channel = FlutterMethodChannel(name: "overlay_screen", binaryMessenger: registrar.messenger())
+    let instance = SwiftOverlayScreenPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
