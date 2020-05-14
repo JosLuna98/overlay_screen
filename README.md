@@ -18,7 +18,7 @@ To use this plugin, add `loading_screen` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  loading_screen: ^1.0.1
+  loading_screen: ^1.0.1+1
 ```
 
 ## Usage
