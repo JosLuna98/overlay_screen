@@ -23,7 +23,7 @@ class OverlayScreen {
   factory OverlayScreen() => _instance;
 
   Screen _state = Screen.none;
-  BuildContext _overlayScreenContext;
+  BuildContext? _overlayScreenContext;
   final Map<String, CustomOverlayScreen> _customOverLayScreens = {
     'default-loading': CustomOverlayScreen(
       backgroundColor: Colors.transparent,
@@ -66,7 +66,7 @@ class OverlayScreen {
       barrierDismissible: false,
       builder: (BuildContext context) {
         _instance._overlayScreenContext = context;
-        return _customOverLayScreens[identifier];
+        return _customOverLayScreens[identifier]!;
       },
     );
   }
@@ -74,7 +74,7 @@ class OverlayScreen {
   /// This method dispose the [OverlayScreen].
   void pop() {
     assert(_instance._state == Screen.showing, "no screen displayed");
-    Navigator.pop(_instance._overlayScreenContext);
+    Navigator.pop(_instance._overlayScreenContext!);
     _instance._overlayScreenContext = null;
     _instance._state = Screen.none;
   }
@@ -90,8 +90,8 @@ class CustomOverlayScreen extends StatelessWidget {
 
   /// CustomOverlayScreen constructor.
   CustomOverlayScreen({
-    @required this.content,
-    @required this.backgroundColor,
+    required this.content,
+    required this.backgroundColor,
   });
 
   @override

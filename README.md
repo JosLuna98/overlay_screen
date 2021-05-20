@@ -7,7 +7,7 @@ A Flutter plugin to easily display and dispose overlay screens anywhere in your 
 **NOTE:** This package was made with Flutter 1.17 and Dart 2.8, make sure you have your environment within the version range.
 ```yaml
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.10.0"
 ```
 
@@ -17,7 +17,7 @@ To use this plugin, add `overlay_screen` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  overlay_screen: ^1.2.0+1
+  overlay_screen: ^1.2.0+1-nullsafety.0
 ```
 
 ## Usage

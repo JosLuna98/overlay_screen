@@ -1,10 +1,10 @@
 name: overlay_screen
 description: A Flutter plugin to easily display and dispose overlay screens anywhere in your app.
-version: 1.2.0+1
+version: 1.2.0+1-nullsafety.0
 homepage: https://github.com/JosLuna98/overlay_screen.git
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.10.0"
 
 dependencies:

@@ -1,3 +1,7 @@
+## 1.2.0+1-nullsafety.0
+
+* Migrate to null safety.
+
 ## 1.2.0+1
 
 * Remake of the [LoadingScreen](https://pub.dev/packages/loading_screen) Plugin to get a better context
